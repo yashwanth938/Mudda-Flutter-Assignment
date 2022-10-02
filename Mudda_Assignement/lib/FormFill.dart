@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import 'ProductSelection.dart';
+
 class MyApp1 extends StatelessWidget {
   // This widget is the root of your application.
   @override
@@ -108,9 +110,18 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
-        leading: Icon(
-          Icons.arrow_back_ios,
-          color: Colors.black,
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back_ios, color: Colors.black),
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (BuildContext context) {
+                  return HomePage();
+                },
+              ),
+            );
+          },
         ),
         title: Text(
           "What do you want to sell",

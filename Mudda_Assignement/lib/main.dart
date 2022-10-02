@@ -39,9 +39,12 @@ class _MyHomePageState extends State<MyHomePage> {
       backgroundColor: Colors.grey[300],
       appBar: AppBar(
         backgroundColor: Colors.grey[300],
-        leading: Icon(
-          Icons.arrow_back_ios_new,
-          color: Colors.black,
+        leading: IconButton(
+          icon: const Icon(
+            Icons.arrow_back_ios,
+            color: Colors.black,
+          ),
+          onPressed: () => {},
         ),
         title: Text(
           "Sell or rent the product",

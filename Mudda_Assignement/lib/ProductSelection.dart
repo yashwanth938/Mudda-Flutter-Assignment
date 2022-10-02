@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'FormFill.dart';
+import 'main.dart';
 
 class HomePage extends StatefulWidget {
   Widget build(BuildContext context) {
@@ -10,9 +11,7 @@ class HomePage extends StatefulWidget {
       theme: ThemeData(
         primarySwatch: Colors.red,
       ),
-      home: MyHomePage(
-        title: '',
-      ),
+      home: HomePage(),
     );
   }
 
@@ -36,7 +35,19 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
-        leading: Icon(Icons.arrow_back_ios, color: Colors.black),
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back_ios, color: Colors.black),
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (BuildContext context) {
+                  return MyApp();
+                },
+              ),
+            );
+          },
+        ),
         title: Text(
           "What do you want to sell",
           style: TextStyle(
